@@ -1088,6 +1088,12 @@ ul {
   padding-top: 15px;
 }
 
+/***** CSS Modifications for Category Images *****/
+.blocks-item img, .home-page-images, .category-page-images, .section-page-images {
+  width: 64px;
+  height: 64px;
+}
+
 /***** Category pages *****/
 .category-container {
   display: flex;
