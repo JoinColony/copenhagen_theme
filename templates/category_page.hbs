@@ -8,6 +8,9 @@
   <div class="category-container">
     <div class="category-content">
       <header class="page-header">
+        {{#is category.id 360004553374}}<img class="category-page-images" src="{{asset 'icons/icon_governance.png'}}" />{{/is}}
+        {{#is category.id 360004127273}}<img class="category-page-images" src="{{asset 'icons/icon_talent.png'}}" />{{/is}}
+        <!-- End Images for Category Page -->
         <h1>{{category.name}}</h1>
         {{#if category.description}}
           <p class="page-header-description">{{category.description}}</p>

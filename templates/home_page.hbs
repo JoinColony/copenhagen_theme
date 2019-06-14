@@ -12,6 +12,10 @@
           {{#if ../has_multiple_categories}}
             <li class="blocks-item">
               <a href='{{url}}' class="blocks-item-link">
+                <!--Images for categories Home Page -->
+                {{#is id 360004553374}}<img class="" src="{{asset 'icons/icon_governance.png'}}" />{{/is}}
+                {{#is id 360004127273}}<img class="" src="{{asset 'icons/icon_talent.png'}}" />{{/is}}
+                <!--End images for categories -->
                 <h4 class="blocks-item-title">{{name}}</h4>
                 <p class="blocks-item-description">{{excerpt description}}</p>
               </a>
