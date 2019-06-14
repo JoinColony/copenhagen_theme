@@ -1,3 +1,17 @@
+
+/***** CSS Modifications for Category Images *****/
+.categories .blocks-item-link {
+	display: flex;
+  align-items: center;
+}
+
+.blocks-item img, .category-page-images, .section-page-images {
+  margin-right: 20px;
+  width: 32px;
+  height: 32px;when
+} 
+
+
 @charset "UTF-8";
 /***** Base *****/
 * {
@@ -143,18 +157,6 @@ ul {
     padding: 0;
     width: 90%;
   }
-}
-
-.dropdown-toggle {
-  background: none;
-  border: 0;
-  padding: 0;
-  text-align: initial;
-}
-
-.dropdown-toggle:focus {
-  outline: 0;
-  text-decoration: underline;
 }
 
 .dropdown-toggle::after {
@@ -356,12 +358,6 @@ ul {
   text-decoration: none;
 }
 
-.form-field .hc-multiselect-toggle:focus {
-  outline: none;
-  border: 1px solid $brand_color;
-  text-decoration: none;
-}
-
 .form-field textarea {
   vertical-align: middle;
 }
@@ -374,11 +370,6 @@ ul {
   content: "*";
   color: #f00;
   margin-left: 2px;
-}
-
-.form-field .optional {
-  color: lighten($text_color, 20%);
-  margin-left: 4px;
 }
 
 .form-field p {
@@ -503,13 +494,9 @@ ul {
 }
 
 .nav-wrapper .icon-menu {
-  border: 0;
-  color: $link_color;
-  cursor: pointer;
   display: inline-block;
   margin-right: 10px;
-  padding: 0;
-  width: auto;
+  color: $link_color;
 }
 
 @media (min-width: 768px) {
@@ -521,11 +508,6 @@ ul {
 [dir="rtl"] .nav-wrapper .icon-menu {
   margin-left: 10px;
   margin-right: 0;
-}
-
-.nav-wrapper .icon-menu:hover, .nav-wrapper .icon-menu:focus, .nav-wrapper .icon-menu:active {
-  background-color: transparent;
-  color: $link_color;
 }
 
 /***** User info in header *****/
@@ -551,7 +533,7 @@ ul {
   white-space: nowrap;
 }
 
-.user-info > [role="button"]:hover, .user-info > [role="button"]:focus {
+.user-info > [role="button"]:hover {
   color: $link_color;
   background-color: transparent;
 }
@@ -620,7 +602,7 @@ ul {
 .footer {
   border-top: 1px solid #ddd;
   margin-top: 60px;
-  padding: 30px 0;
+  /**padding: 30px 0;**/
 }
 
 .footer a {
@@ -711,7 +693,7 @@ ul {
   top: 50%;
   transform: translateY(-50%);
   background-color: #fff;
-  color: #777;
+  color: #ddd;
   content: "\1F50D";
   font-size: 18px;
   position: absolute;
@@ -729,7 +711,7 @@ ul {
 
 /***** Hero component *****/
 .hero {
-  background-image: url($homepage_background_image);
+  background-image: url("https://source.unsplash.com/Ji_G7Bu1MoM/1600x900"); 
   background-position: center;
   background-size: cover;
   height: 300px;
@@ -959,14 +941,10 @@ ul {
 }
 
 .promoted-articles-item a {
-  display: block;
   border-bottom: 1px solid #ddd;
-  padding: 15px 0;
   color: $text_color;
-}
-
-.promoted-articles-item .icon-lock::before {
-  vertical-align: baseline;
+  display: block;
+  padding: 15px 0;
 }
 
 .promoted-articles-item:last-child a {
@@ -1088,16 +1066,10 @@ ul {
   padding-top: 15px;
 }
 
-/***** CSS Modifications for Category Images *****/
-.blocks-item img, .home-page-images, .category-page-images, .section-page-images {
-  width: 64px;
-  height: 64px;
-}
-
 /***** Category pages *****/
 .category-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .category-content {
@@ -1134,6 +1106,10 @@ ul {
   }
 }
 
+.section-tree .icon-lock::before {
+  vertical-align: baseline;
+}
+
 .section-tree-title {
   margin-bottom: 0;
 }
@@ -1148,16 +1124,13 @@ ul {
 }
 
 .article-list-item {
+  border-bottom: 1px solid #ddd;
   font-size: 16px;
   padding: 15px 0;
 }
 
 .article-list-item a {
   color: $text_color;
-}
-
-.article-list-item .icon-lock::before {
-  vertical-align: baseline;
 }
 
 .icon-star::before {
@@ -1168,7 +1141,7 @@ ul {
 /***** Section pages *****/
 .section-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .section-content {
@@ -1182,42 +1155,6 @@ ul {
 }
 
 .section-subscribe .dropdown-toggle::after {
-  display: none;
-}
-
-.section-list {
-  margin: 40px 0;
-}
-
-.section-list--collapsed .section-list-item:nth-child(1n + 6) {
-  display: none;
-}
-
-.section-list-item {
-  border-bottom: 1px solid #ddd;
-  font-size: 16px;
-  padding: 15px 0;
-}
-
-.section-list-item:first-child {
-  border-top: 1px solid #ddd;
-}
-
-.section-list-item a {
-  align-items: center;
-  color: $text_color;
-  display: flex;
-  justify-content: space-between;
-}
-
-.see-all-sections-trigger {
-  cursor: pointer;
-  display: block;
-  padding: 15px;
-  text-align: center;
-}
-
-.see-all-sections-trigger[aria-hidden="true"] {
   display: none;
 }
 
@@ -1268,10 +1205,6 @@ ul {
   }
 }
 
-.article-avatar {
-  margin-right: 10px;
-}
-
 .article-author {
   margin-bottom: 10px;
 }
@@ -1309,6 +1242,7 @@ ul {
 
 .article-meta {
   display: inline-block;
+  margin-left: 10px;
   vertical-align: middle;
 }
 
@@ -1330,7 +1264,7 @@ ul {
   margin-right: 20px;
 }
 
-.article-body ul > ul, .article-body ol > ol, .article-body ol > ul, .article-body ul > ol, .article-body li > ul, .article-body li > ol {
+.article-body ul > ul, .article-body ol > ol, .article-body ol > ul, .article-body ul > ol {
   margin: 0;
 }
 
@@ -1430,19 +1364,17 @@ ul {
 }
 
 .article-relatives > * {
-  flex: 1 0 50%;
-  min-width: 50%;
-  overflow-wrap: break-word;
+  flex: 1 0 auto;
   margin-right: 0;
 }
 
 .article-relatives > *:last-child {
-  padding: 0;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
   .article-relatives > * {
-    padding-right: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -1654,6 +1586,10 @@ ul {
   content: "\e900";
 }
 
+.share-googleplus::before {
+  content: "\e902";
+}
+
 /***** Comments *****/
 /* Styles comments inside articles, posts and requests */
 .comment {
@@ -1693,10 +1629,11 @@ ul {
   float: right;
 }
 
-.comment-sorter .dropdown-toggle {
+.comment-sorter a {
   color: lighten($text_color, 20%);
   font-weight: 300;
   font-size: 13px;
+  text-decoration: none;
 }
 
 [dir="rtl"] .comment-sorter {
@@ -1841,10 +1778,8 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
-  word-wrap: break-word;
   font-family: $text_font;
   line-height: 1.6;
-  overflow-x: auto;
 }
 
 .comment-body img {
@@ -1865,7 +1800,7 @@ ul {
   margin-right: 20px;
 }
 
-.comment-body ul > ul, .comment-body ol > ol, .comment-body ol > ul, .comment-body ul > ol, .comment-body li > ul, .comment-body li > ol {
+.comment-body ul > ul, .comment-body ol > ol, .comment-body ol > ul, .comment-body ul > ol {
   margin: 0;
 }
 
@@ -2234,11 +2169,10 @@ ul {
 /***** Status labels *****/
 /* Styles labels used in posts, articles and requests */
 .status-label {
-  background-color: #038153;
+  background-color: #1eb848;
   border-radius: 4px;
   color: #fff;
   font-size: 12px;
-  font-weight: 600;
   margin-right: 2px;
   padding: 3px 10px;
   vertical-align: middle;
@@ -2277,27 +2211,29 @@ ul {
   right: auto;
 }
 
-.status-label-not-planned, .status-label-closed {
-  background-color: #e9ebed;
+.status-label-pending, .status-label-not-planned {
+  background-color: #eee;
   color: lighten($text_color, 20%);
 }
 
 .status-label-pending {
-  background-color: #1f73b7;
   text-align: center;
 }
 
 .status-label-open {
-  background-color: #c72a1c;
+  background-color: #e03b30;
+}
+
+.status-label-closed {
+  background-color: #ddd;
 }
 
 .status-label-solved {
-  background-color: #68737d;
+  background-color: #999;
 }
 
 .status-label-new {
-  background-color: #ffb648;
-  color: #703b15;
+  background-color: #ffd12a;
 }
 
 .status-label-hold {
@@ -2441,7 +2377,7 @@ ul {
   margin-right: 20px;
 }
 
-.post-body ul > ul, .post-body ol > ol, .post-body ol > ul, .post-body ul > ol, .post-body li > ul, .post-body li > ol {
+.post-body ul > ul, .post-body ol > ol, .post-body ol > ul, .post-body ul > ol {
   margin: 0;
 }
 
@@ -3070,14 +3006,20 @@ ul {
 .request-main .comment-show-container {
   border-radius: 2px;
   border: 1px solid #ddd;
-  color: lighten($text_color, 20%);
-  text-align: inherit;
-  padding: 8px 25px;
+  cursor: pointer;
+  display: flex;
+  padding: 8px 15px;
   width: 100%;
 }
 
 .request-main .comment-show-container.hidden {
   display: none;
+}
+
+.request-main .comment-show-container-content {
+  align-self: center;
+  color: lighten($text_color, 20%);
+  margin-left: 10px;
 }
 
 .request-main .form-field.comment-ccs > ul {
@@ -3343,6 +3285,10 @@ ul {
   content: "\e901";
 }
 
+.icon-googleplus-::before {
+  content: "\e902";
+}
+
 .icon-facebook::before {
   content: "\e903";
 }
@@ -3470,7 +3416,6 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
-  word-wrap: break-word;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3518,7 +3463,6 @@ ul {
   color: $brand_text_color;
   line-height: normal;
   padding: 8px 20px;
-  outline-color: $brand_color;
 }
 
 .profile-header .description {
@@ -3526,7 +3470,6 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
-  word-wrap: break-word;
   margin: 15px 0;
   flex-basis: 100%;
 }
@@ -3769,7 +3712,6 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
-  word-wrap: break-word;
   padding: 20px 0;
   position: relative;
 }
@@ -3946,7 +3888,6 @@ ul {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   word-break: break-word;
-  word-wrap: break-word;
   margin: 0;
   min-width: 0;
   width: 100%;
@@ -4060,7 +4001,6 @@ ul {
 
 .search-result-description {
   margin-top: 15px;
-  word-break: break-word;
 }
 
 .search-result-votes, .search-result-meta-count {
@@ -4112,24 +4052,4 @@ ul {
   content: "·";
   display: inline-block;
   margin: 0 5px;
-}
-
-/* Non-latin search results highlight */
-/* Add a yellow background for Chinese */
-html[lang|="zh"] .search-result-description em {
-  font-style: normal;
-  background: yellow;
-}
-
-/* Use bold to highlight for the rest of supported non-latin languages */
-html[lang|="ar"] .search-result-description em,
-html[lang|="bg"] .search-result-description em,
-html[lang|="el"] .search-result-description em,
-html[lang|="he"] .search-result-description em,
-html[lang|="hi"] .search-result-description em,
-html[lang|="ko"] .search-result-description em,
-html[lang|="ja"] .search-result-description em,
-html[lang|="ru"] .search-result-description em,
-html[lang|="th"] .search-result-description em {
-  font-style: bold;
 }

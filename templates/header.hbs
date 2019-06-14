@@ -1,17 +1,13 @@
 <header class="header">
   <div class="logo">
     {{#link 'help_center'}}
-      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}">
+      <img src="{{settings.logo}}" alt="{{t 'logo'}}">
     {{/link}}
   </div>
   <div class="nav-wrapper">
-    <span class="icon-menu" tabindex="0" role="button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}"></span>
+    <span class="icon-menu"></span>
     <nav class="user-nav" id="user-nav">
-      {{#link 'help_center'}}
-      {{/link}}
-      {{#link 'community' class='community-link'}}
-        {{'Feedback'}}
-      {{/link}}
+      {{link 'community'}}
       {{link 'new_request' class='submit-a-request'}}
     </nav>
     {{user_info}}

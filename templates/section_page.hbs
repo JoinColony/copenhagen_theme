@@ -9,35 +9,20 @@
     <section class="section-content">
       <header class="page-header">
         <!--Images for sections -->
-        {{#is section.id 360004553374}}<img class="section-page-images" src="{{asset 'icon_governance.png'}}" />{{/is}}
-        {{#is section.id 360004127273}}<img class="section-page-images" src="{{asset 'icon_talent.png'}}" />{{/is}}
+          {{#is section.id 115001526163}}<img class="section-page-images" src="{{asset 'hamburger.png'}}" />{{/is}}
+          {{#is section.id 115001526183}}<img class="section-page-images" src="{{asset 'pizza.png'}}" />{{/is}}
         <!--End images for sections -->
         <h1>
           {{section.name}}
+          {{#if section.internal}}
+            <span class="icon-lock" title="{{t 'internal'}}"></span>
+          {{/if}}
         </h1>
-        {{#if settings.show_follow_section}}
-          {{subscribe}}
-        {{/if}}
+        {{subscribe}}
         {{#if section.description}}
           <p class="page-header-description">{{section.description}}</p>
         {{/if}}
       </header>
-
-      {{#if section.sections}}
-        <ul class="section-list section-list--collapsed">
-          {{#each section.sections}}
-          <li class="section-list-item">
-              <a href="{{url}}">
-                <span>{{name}}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
-                </svg>
-              </a>
-            </li>
-          {{/each}}
-          <a tabindex="0" class="see-all-sections-trigger" aria-hidden="true" id="see-all-sections-trigger" title="{{t 'see_all_sections'}}">{{t 'see_all_sections'}}</a>
-        </ul>
-      {{/if}}
 
 
       {{#if section.articles}}
@@ -48,9 +33,6 @@
                 <span data-title="{{t 'promoted'}}" class="icon-star"></span>
               {{/if}}
               <a href="{{url}}" class="article-list-link">{{title}}</a>
-              {{#if internal}}
-                <span class="icon-lock" title="{{t 'internal'}}"></span>
-              {{/if}}
             </li>
           {{/each}}
         </ul>
@@ -61,7 +43,12 @@
       {{/if}}
 
       {{pagination}}
-
     </section>
   </div>
 </div>
+
+<script>
+  $('.icon').each(function (idx, itm){
+    $(itm).attr('src', asset + $.trim($('ol.breadcrumbs > li:nth-child(2) > a').text()).split(' ').join('_') + extension );
+  });
+</script>
